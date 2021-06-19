@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample/qr_scan_screen/qr_scan_screen.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: QrcodeScannerScreen(),
+      home: HomeScreen(),
     );
   }
 }
