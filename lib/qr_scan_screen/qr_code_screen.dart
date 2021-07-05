@@ -3,12 +3,12 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:sample/qr_scan_screen/result.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class QrcodeScanScreen extends StatefulWidget {
+class QrcodeScannerScreen extends StatefulWidget {
   @override
-  _QrcodeScanScreenState createState() => _QrcodeScanScreenState();
+  _QrcodeScannerScreenState createState() => _QrcodeScannerScreenState();
 }
 
-class _QrcodeScanScreenState extends State<QrcodeScanScreen> {
+class _QrcodeScannerScreenState extends State<QrcodeScannerScreen> {
   GlobalKey qrKey = GlobalKey();
   var qrText = "";
   QRViewController? controller;

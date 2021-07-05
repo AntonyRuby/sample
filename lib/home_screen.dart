@@ -31,8 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
               case ConnectionState.done:
                 return Align(
                   alignment: Alignment.bottomCenter,
-                  child: Text(
-                    'Version: ${snapshot.data.version}',
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Version: ${snapshot.data!.version}',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
                   ),
                 );
 

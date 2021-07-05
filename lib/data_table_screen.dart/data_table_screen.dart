@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample/qr_scan_screen/qr_scan_screen.dart';
+import 'package:sample/qr_scan_screen/qr_code_screen.dart';
 
 class TableScreen extends StatefulWidget {
   @override
@@ -7,9 +7,9 @@ class TableScreen extends StatefulWidget {
 }
 
 class _TableScreenState extends State<TableScreen> {
-  List<Data> users;
-  List<Data> selectedUsers;
-  bool sort;
+  List<Data>? users;
+  List<Data>? selectedUsers;
+  bool? sort;
 
   @override
   void initState() {
@@ -32,9 +32,9 @@ class _TableScreenState extends State<TableScreen> {
   onSelectedRow(bool selected, Data user) async {
     setState(() {
       if (selected) {
-        selectedUsers.add(user);
+        selectedUsers!.add(user);
       } else {
-        selectedUsers.remove(user);
+        selectedUsers!.remove(user);
       }
     });
   }
@@ -60,7 +60,7 @@ class _TableScreenState extends State<TableScreen> {
           body: Theme(
             data: Theme.of(context).copyWith(dividerColor: Colors.black),
             child: DataTable(
-                sortAscending: sort,
+                sortAscending: sort!,
                 sortColumnIndex: 0,
                 // showCheckboxColumn: true,
                 dataRowHeight: 70,
@@ -74,7 +74,7 @@ class _TableScreenState extends State<TableScreen> {
                       tooltip: "Display in Ascending",
                       onSort: (columnIndex, ascending) {
                         setState(() {
-                          sort = !sort;
+                          sort = sort;
                           // datas.sort((a, b) => a.name.compareTo(b.name));
                         });
                         onSortColum(columnIndex, ascending);
@@ -121,10 +121,10 @@ class _TableScreenState extends State<TableScreen> {
                 rows: datas
                     .map(
                       (e) => DataRow(
-                          selected: selectedUsers.contains(e),
+                          selected: selectedUsers!.contains(e),
                           onSelectChanged: (b) {
                             print("Onselect");
-                            onSelectedRow(b, e);
+                            onSelectedRow(b!, e);
                           },
                           // selected: selectedData.c
                           // onSelectChanged: (val) {
